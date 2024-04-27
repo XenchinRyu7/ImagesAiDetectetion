@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Images Converter</string>
+    <string name="ImagePickerScreen">Text Recognition</string>
+    <string name="imageScannerScreen">Document Scanner</string>
+    <string name="HomeScreen">Dashboard</string>
+    <string name="back_button">Back</string>
+    <string name="main_fab_rotation">rotate</string>
+    <string name="main_fab_button">Add</string>
+    <string name="float_icon">float</string>
+    <string name="DocumentScreen">Document Scanner</string>
+    <string name="TextScan">Text Scan</string>
+</resources>
