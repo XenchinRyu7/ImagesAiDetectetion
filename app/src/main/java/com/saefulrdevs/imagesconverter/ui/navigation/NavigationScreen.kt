@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -72,13 +73,13 @@ fun NavigationScreen(navController: NavHostController = rememberNavController())
     )
 
     Scaffold(
-        topBar = {
-            AppBar(
-                currentScreen = currentScreen,
-                canNavigateBack = navController.previousBackStackEntry != null,
-                navigateUp = { navController.navigateUp() }
-            )
-        }
+//        topBar = {
+//            AppBar(
+//                currentScreen = currentScreen,
+//                canNavigateBack = navController.previousBackStackEntry != null,
+//                navigateUp = { navController.navigateUp() }
+//            )
+//        }
     ) { innerPadding ->
         NavHost(
             navController = navController,
@@ -101,4 +102,11 @@ fun NavigationScreen(navController: NavHostController = rememberNavController())
             }
         }
     }
+}
+
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
+@Preview
+@Composable
+fun PreviewNavigationScreen() {
+    NavigationScreen()
 }

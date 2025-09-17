@@ -35,9 +35,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.saefulrdevs.imagesconverter.R
-import com.saefulrdevs.imagesconverter.ui.theme.md_theme_light_onSecondary
-import com.saefulrdevs.imagesconverter.ui.theme.md_theme_light_primary
-import com.saefulrdevs.imagesconverter.ui.theme.md_theme_light_scrim
+import androidx.compose.material3.MaterialTheme
 
 @Composable
 fun MultiFloatingActionButton(
@@ -116,10 +114,10 @@ fun MiniFabItem(
         Text(
             text = item.label,
             style = typography.labelSmall,
-            color = md_theme_light_onSecondary,
+            color = MaterialTheme.colorScheme.onSecondary,
             modifier = Modifier
                 .clip(RoundedCornerShape(size = 8.dp))
-                .background(md_theme_light_scrim.copy(alpha = 0.5f))
+                .background(MaterialTheme.colorScheme.scrim.copy(alpha = 0.5f))
                 .padding(all = 8.dp)
         )
 
@@ -163,9 +161,10 @@ private class FabButtonSubImpl(
     override val backgroundTint: Color
 ) : FabButtonSub
 
+@Composable
 fun FabButtonSub(
-    backgroundTint: Color = md_theme_light_primary,
-    iconTint: Color = md_theme_light_onSecondary
+    backgroundTint: Color = MaterialTheme.colorScheme.primary,
+    iconTint: Color = MaterialTheme.colorScheme.onSecondary
 ): FabButtonSub = FabButtonSubImpl(iconTint, backgroundTint)
 
 sealed class FabButtonState {

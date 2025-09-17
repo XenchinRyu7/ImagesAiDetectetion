@@ -13,4 +13,14 @@ class MainViewModel : ViewModel() {
     fun onTakePhoto(bitmap: Bitmap) {
         _bitmaps.value += bitmap
     }
+    
+    fun clearAllPhotos() {
+        _bitmaps.value = emptyList()
+    }
+    
+    fun removePhoto(index: Int) {
+        if (index in _bitmaps.value.indices) {
+            _bitmaps.value = _bitmaps.value.toMutableList().apply { removeAt(index) }
+        }
+    }
 }
